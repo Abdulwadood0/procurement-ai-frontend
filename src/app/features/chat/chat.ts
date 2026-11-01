@@ -75,7 +75,7 @@ export class Chat {
     'How many orders were created in 2014?',
     'Which department had the highest spending?',
     'What are the most frequently ordered items?',
-    'Show me IT Goods purchases.',
+    'How many orders were placed with Correctional Health Care Services?',
   ];
 
   constructor() {
