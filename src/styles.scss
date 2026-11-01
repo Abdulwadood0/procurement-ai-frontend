@@ -1,1 +1,229 @@
-/* You can add global styles to this file, and also import other style files */
+// ─── Design Tokens ──────────────────────────────────────────────────────────
+// A disciplined set of variables that establish the entire design system.
+// Inspired by Linear / Vercel — sophisticated neutrals with a subtle accent.
+
+:root {
+  // ── Typography ──
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', Consolas,
+    'Courier New', monospace;
+
+  --text-xs: 0.75rem;    // 12px
+  --text-sm: 0.8125rem;  // 13px
+  --text-base: 0.875rem; // 14px
+  --text-md: 0.9375rem;  // 15px
+  --text-lg: 1.125rem;   // 18px
+  --text-xl: 1.25rem;    // 20px
+
+  --leading-snug: 1.45;
+  --leading-normal: 1.6;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  // ── Palette ──
+  --gray-50: #fafafa;
+  --gray-100: #f4f4f5;
+  --gray-150: #ececed;
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-600: #52525b;
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+  --gray-950: #09090b;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  // Accent — a refined blue, slightly muted
+  --accent-50: #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+
+  // Semantic (Light Mode Default)
+  --color-bg: var(--white);
+  --color-bg-subtle: var(--gray-50);
+  --color-bg-muted: var(--gray-100);
+  --color-surface: var(--white);
+  --color-border: var(--gray-200);
+  --color-border-subtle: var(--gray-150);
+  --color-text: var(--gray-900);
+  --color-text-secondary: var(--gray-500);
+  --color-text-tertiary: var(--gray-400);
+  --color-accent: var(--accent-600);
+  --color-accent-hover: var(--accent-700);
+  --color-accent-subtle: var(--accent-50);
+
+  --color-contrast-surface: var(--gray-900);
+  --color-contrast-text: var(--white);
+  --color-composer-focus: var(--gray-400);
+  --color-code-bg: var(--gray-100);
+  --color-pre-bg: var(--gray-900);
+  --color-pre-border: var(--gray-800);
+  --color-table-header-bg: var(--gray-50);
+  --color-table-row-hover: var(--gray-50);
+  --color-table-border: var(--gray-150);
+  --color-scrollbar-thumb: var(--gray-300);
+  --color-scrollbar-thumb-hover: var(--gray-400);
+
+  // Status
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+
+  // ── Spacing ──
+  --space-1: 0.25rem;  // 4px
+  --space-2: 0.5rem;   // 8px
+  --space-3: 0.75rem;  // 12px
+  --space-4: 1rem;     // 16px
+  --space-5: 1.25rem;  // 20px
+  --space-6: 1.5rem;   // 24px
+  --space-8: 2rem;     // 32px
+  --space-10: 2.5rem;  // 40px
+  --space-12: 3rem;    // 48px
+  --space-16: 4rem;    // 64px
+
+  // ── Radii ──
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  // ── Shadows ──
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-ring: 0 0 0 3px rgba(59, 130, 246, 0.15);
+
+  // ── Transitions ──
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+}
+
+// ─── Dark Mode Tokens ───────────────────────────────────────────────────────
+
+[data-theme='dark'],
+:root.dark {
+  --color-bg: #090a0f;
+  --color-bg-subtle: #0f1118;
+  --color-bg-muted: #161922;
+  --color-surface: #12141d;
+  --color-border: #232736;
+  --color-border-subtle: #1a1e2b;
+  --color-text: #f3f4f6;
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #6b7280;
+
+  --color-accent: #3b82f6;
+  --color-accent-hover: #60a5fa;
+  --color-accent-subtle: rgba(59, 130, 246, 0.15);
+
+  --color-contrast-surface: #ffffff;
+  --color-contrast-text: #090a0f;
+  --color-composer-focus: #4b5568;
+  --color-code-bg: #161924;
+  --color-pre-bg: #06070a;
+  --color-pre-border: #1d212e;
+  --color-table-header-bg: #141722;
+  --color-table-row-hover: #141722;
+  --color-table-border: #202434;
+  --color-scrollbar-thumb: #282d3d;
+  --color-scrollbar-thumb-hover: #3a4157;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+// ─── Reset & Base ───────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+}
+
+html[data-theme='dark'],
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background-color var(--duration-normal) var(--ease-out),
+              color var(--duration-normal) var(--ease-out);
+}
+
+// ─── Scrollbar ──────────────────────────────────────────────────────────────
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: var(--radius-full);
+
+  &:hover {
+    background: var(--color-scrollbar-thumb-hover);
+  }
+}
+
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+// ─── Selection ──────────────────────────────────────────────────────────────
+
+::selection {
+  background: var(--accent-200);
+  color: var(--gray-900);
+}
+
+[data-theme='dark'] ::selection,
+.dark ::selection {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+// ─── Focus ──────────────────────────────────────────────────────────────────
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

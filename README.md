@@ -1,59 +1,59 @@
-# ProcurementAiFrontend
+# Procurement AI — Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.5.
+A modern, responsive Angular frontend for the **Procurement AI Assistant**. It connects to a LangGraph/FastAPI backend to deliver real-time insights on procurement data, spending analytics, and orders.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
-```
+- **Real-Time Streaming**: Token-by-token SSE streaming with smooth loading and typing indicators.
+- **Database Query Inspector**: View and copy generated MongoDB queries and aggregation pipelines directly under assistant responses.
+- **Dark / Light Theme**: One-click theme toggle with persistent storage and system preference detection.
+- **Quick Prompts**: Interactive starter queries to explore data instantly.
+- **Thread Continuity**: Preserves conversation context across messages via thread IDs.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🛠 Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Framework**: Angular 22 (Standalone Components & Signals)
+- **Styling**: SCSS with design tokens (inspired by Linear & Vercel)
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🚀 Getting Started
 
-## Building
+### Prerequisites
 
-To build the project run:
+- [Node.js](https://nodejs.org/) (v18+)
+- Backend running at `http://localhost:8000`
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Installation
 
 ```bash
-ng test
+# Clone the repository and navigate into the folder
+cd procurement-ai-frontend
+
+# Install dependencies
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Running Locally
 
 ```bash
-ng e2e
+# Start development server
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Navigate to `http://localhost:4200/`. The app will automatically reload on source changes.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📜 Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm start` | Runs the app in development mode on port 4200 |
+| `npm run build` | Compiles the production build into `dist/` |
+
